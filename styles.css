@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     overflow-x: hidden;
-   text-align:center;
   }
   
   *,
@@ -15,7 +14,6 @@
     box-sizing: border-box;
     font-size: 62.5%;
     scroll-behavior: smooth;
-    color:white;
   }
 
   @media (max-width: 75em) {
@@ -39,6 +37,7 @@
   header {
     position: fixed;
     top:0;
+   margin-top:10px;
     min-height: 75px;
     display: flex;
     justify-content: space-around;
@@ -127,7 +126,6 @@
     font-size: 1.8rem;
     font-weight: 400;
     line-height: 1.4;
-   color:white;
   }
   
   h1,
@@ -289,7 +287,27 @@
     padding: 1rem 2rem;
     border-radius: 2px;
   }
-    
+  
+  .btn-show-all {
+    font-size: 2rem;
+    background: var(--main-gray);
+    transition: background 0.3s ease-out;
+  }
+  
+  .btn-show-all:hover {
+    background: var(--main-red);
+  }
+  
+  .btn-show-all:hover > i {
+    transform: translateX(2px);
+  }
+  
+  .btn-show-all > i {
+    margin-left: 10px;
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+  
   /* Contact section */
   
   .contact-section {
@@ -302,7 +320,6 @@
     height: 80vh;
     padding: 0 2rem;
     background: black;
-    overflow:hidden;
   }
   
   .contact-section-header > h2 {
@@ -344,8 +361,8 @@
     display: flex;
     justify-content: space-evenly;
     padding: 2rem;
-    background-color: black;
-    color: white;
+    background: black;
+       color: white;
   }
   
   footer > p {
