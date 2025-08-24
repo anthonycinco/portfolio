@@ -16,10 +16,10 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-        cache: 'npm'
+        # Remove cache since package-lock.json doesn't exist yet
 
     - name: Install dependencies
-      run: npm ci
+      run: npm install
 
     - name: Build project
       run: npm run build
@@ -29,4 +29,3 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist
-        # Remove cname for main branch deployment
